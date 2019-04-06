@@ -9,11 +9,13 @@ import { AppComponent } from './app.component';
 import { NavioComponent } from './navio/navio.component';
 
 import { NavioService } from './navio.service';
+import { EventoComponent } from './evento/evento.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavioComponent
+    NavioComponent,
+    EventoComponent
   ],
   imports: [
     BrowserModule,
