@@ -1,0 +1,14 @@
+C:\Users\andre\source\repos\Hackathon Portos GIT\HackathonPorto\HackatonPortosWeb\bin\Debug\netcoreapp2.1\HackatonPortosWeb.deps.json
+C:\Users\andre\source\repos\Hackathon Portos GIT\HackathonPorto\HackatonPortosWeb\bin\Debug\netcoreapp2.1\HackatonPortosWeb.runtimeconfig.json
+C:\Users\andre\source\repos\Hackathon Portos GIT\HackathonPorto\HackatonPortosWeb\bin\Debug\netcoreapp2.1\HackatonPortosWeb.runtimeconfig.dev.json
+C:\Users\andre\source\repos\Hackathon Portos GIT\HackathonPorto\HackatonPortosWeb\bin\Debug\netcoreapp2.1\HackatonPortosWeb.dll
+C:\Users\andre\source\repos\Hackathon Portos GIT\HackathonPorto\HackatonPortosWeb\bin\Debug\netcoreapp2.1\HackatonPortosWeb.pdb
+C:\Users\andre\source\repos\Hackathon Portos GIT\HackathonPorto\HackatonPortosWeb\obj\Debug\netcoreapp2.1\HackatonPortosWeb.csprojAssemblyReference.cache
+C:\Users\andre\source\repos\Hackathon Portos GIT\HackathonPorto\HackatonPortosWeb\obj\Debug\netcoreapp2.1\HackatonPortosWeb.csproj.CoreCompileInputs.cache
+C:\Users\andre\source\repos\Hackathon Portos GIT\HackathonPorto\HackatonPortosWeb\obj\Debug\netcoreapp2.1\HackatonPortosWeb.RazorAssemblyInfo.cache
+C:\Users\andre\source\repos\Hackathon Portos GIT\HackathonPorto\HackatonPortosWeb\obj\Debug\netcoreapp2.1\HackatonPortosWeb.RazorAssemblyInfo.cs
+C:\Users\andre\source\repos\Hackathon Portos GIT\HackathonPorto\HackatonPortosWeb\obj\Debug\netcoreapp2.1\HackatonPortosWeb.AssemblyInfoInputs.cache
+C:\Users\andre\source\repos\Hackathon Portos GIT\HackathonPorto\HackatonPortosWeb\obj\Debug\netcoreapp2.1\HackatonPortosWeb.AssemblyInfo.cs
+C:\Users\andre\source\repos\Hackathon Portos GIT\HackathonPorto\HackatonPortosWeb\obj\Debug\netcoreapp2.1\HackatonPortosWeb.RazorTargetAssemblyInfo.cache
+C:\Users\andre\source\repos\Hackathon Portos GIT\HackathonPorto\HackatonPortosWeb\obj\Debug\netcoreapp2.1\HackatonPortosWeb.dll
+C:\Users\andre\source\repos\Hackathon Portos GIT\HackathonPorto\HackatonPortosWeb\obj\Debug\netcoreapp2.1\HackatonPortosWeb.pdb
