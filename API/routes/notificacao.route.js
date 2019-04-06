@@ -4,26 +4,6 @@ var instanceId = "21"; // TODO: Replace it with your gateway instance ID here
 var clientId = "rvf.vazquez@hotmail.com";     // TODO: Replace it with your Forever Green client ID here
 var clientSecret = "8e30a2f8785547508b21494d99af7928";  // TODO: Replace it with your Forever Green client secret here
 
-var jsonPayload = JSON.stringify({
-    group_admin: "+5513992019511", // TODO: Specify the WhatsApp number of the group creator, including the country code
-    group_name: "Hackaton dos Portos",
-    //number: "5513991678484",  // TODO: Specify the recipient's number here. NOT the gateway number
-    message: "Primeira msg whatsapp"
-});
-
-var options = {
-    hostname: "api.whatsmate.net",
-    port: 80,
-    path: "/v3/whatsapp/single/text/message/" + instanceId,
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-        "X-WM-CLIENT-ID": clientId,
-        "X-WM-CLIENT-SECRET": clientSecret,
-        "Content-Length": Buffer.byteLength(jsonPayload)
-    }
-};
-
 
 // 
 var express = require("express");
@@ -45,6 +25,28 @@ router.post("/", function(req, res) {
     let notificacao = new Notificacao(req.body);
 
     notificacao.save().then(nofificacao => {
+
+        var jsonPayload = JSON.stringify({
+            //group_admin: "+5513992019511", // TODO: Specify the WhatsApp number of the group creator, including the country code
+            //group_name: "Hackaton dos Portos",
+            number: "5513991678484",  // TODO: Specify the recipient's number here. NOT the gateway number
+            message: notificacao.MENSAGEM_NOTIFICACAO
+        });
+
+        var options = {
+            hostname: "api.whatsmate.net",
+            port: 80,
+            path: "/v3/whatsapp/single/text/message/" + instanceId,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-WM-CLIENT-ID": clientId,
+                "X-WM-CLIENT-SECRET": clientSecret,
+                "Content-Length": Buffer.byteLength(jsonPayload)
+            }
+        };
+
+
         var request = new http.ClientRequest(options);
         request.end(jsonPayload);
 
