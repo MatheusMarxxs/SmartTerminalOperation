@@ -1,12 +1,13 @@
 // NODE.JS PARA CUIDAR DOS WEBSERVICES E APIS!
-
 var express        = require("express");
 var mongoose       = require("mongoose");
 var methodOverride = require("method-override");
+var bodyParser     = require("body-parser");
 
 var app = express();
 
 app.use(express.static(__dirname + "/public"));
+app.use(bodyParser.json());
 app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
 
