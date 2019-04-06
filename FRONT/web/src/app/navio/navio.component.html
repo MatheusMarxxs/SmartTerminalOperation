@@ -1,0 +1,61 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">BERTH_WINDOW</label>
+        <input type="text" class="form-control" formControlName="BERTH_WINDOW" />
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">CHEGADA_BARRA</label>
+        <input type="text" class="form-control" formControlName="CHEGADA_BARRA" />
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">PREVISAO_ATRACACAO</label>
+        <input type="text" class="form-control" formControlName="PREVISAO_ATRACACAO" />
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">ESCA_DTHR_ATRACACAO</label>
+        <input type="text" class="form-control" formControlName="ESCA_DTHR_ATRACACAO" />
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">INICIO_OPERACAO</label>
+        <input type="text" class="form-control" formControlName="INICIO_OPERACAO" />
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">FIM_OPERCACAO</label>
+        <input type="text" class="form-control" formControlName="FIM_OPERCACAO" />
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">DESATRACACAO</label>
+        <input type="text" class="form-control" formControlName="DESATRACACAO" />
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">NAVI_NOME</label>
+        <input type="text" class="form-control" formControlName="NAVI_NOME" />
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">HINA_QTDE_TOTAL_MOV</label>
+        <input type="text" class="form-control" formControlName="HINA_QTDE_TOTAL_MOV" />
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">HINA_CMPH</label>
+        <input type="text" class="form-control" formControlName="HINA_CMPH" />
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">SERVICO</label>
+        <input type="text" class="form-control" formControlName="SERVICO" />
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">LINER</label>
+        <input type="text" class="form-control" formControlName="LINER" />
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">BERCO_ATRACACAO</label>
+        <input type="text" class="form-control" formControlName="BERCO_ATRACACAO" />
+      </div>
+      <div class="form-group">
+        <button (click)="addNavio(BERTH_WINDOW.value, CHEGADA_BARRA.value, PREVISAO_ATRACACAO.value, ESCA_DTHR_ATRACACAO.value, INICIO_OPERACAO.value, FIM_OPERCACAO.value, DESATRACACAO.value, NAVI_NOME.value, HINA_QTDE_TOTAL_MOV.value, HINA_CMPH.value, SERVICO.value, LINER.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Adicionar</button>
+      </div>
+    </form>
+  </div>
+</div>
