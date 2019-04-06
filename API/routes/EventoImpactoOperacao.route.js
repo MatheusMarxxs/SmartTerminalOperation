@@ -17,6 +17,8 @@ router.post("/", function(req, res) {
     let eventoImpactoOperacao = new EventoImpactoOperacao(req.body);
 
     eventoImpactoOperacao.save().then(eventoImpactoOperacao => {
+
+        
         res.status(200).json({ 'eventoImpactoOperacao': 'eventoImpactoOperacao adicionado com sucesso'})
     })
     .catch(err => {
