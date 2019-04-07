@@ -1,35 +1,109 @@
 <div class="card">
   <div class="card-body">
+
+    <div class="card">
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let impacto of impactos" class="list-group-item">
+          <div class="row">
+            <div class="col-md-12">
+              <h3>Impacto</h3> 
+              <hr />
+            </div>
+            <div class="col-md-12">
+              <table class="">
+                <tr>
+                  <th>Data Inicial:&nbsp;</th>
+                  <td>{{ impacto.DATA_INICIAL | date: 'dd/MM/yyyy' }}</td>
+                </tr>
+                <tr>
+                  <th>Data Final Prevista:&nbsp;</th>
+                  <td>{{ impacto.DATA_FINAL | date: 'dd/MM/yyyy' }}</td>
+                </tr>
+                <tr>
+                  <th>Data Final:&nbsp;</th>
+                  <td>{{ impacto.DATA_FINAL_PREVISTA | date: 'dd/MM/yyyy' }}</td>
+                </tr>
+              </table>
+              <hr />
+            </div>
+
+       
+
+            <div class="col-md-12" *ngIf="impacto.ESCALAS_IMPACTADAS.length > 0">
+              <label><b>Escalas Impactadas</b></label>
+              <div class="table-responsive">
+              <table class="table table-condensed table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Chegada Barra</th>
+                      <th scope="col">Previsão Atracação</th>
+                      <th scope="col">Atracação</th>
+                      <th scope="col">Início Operação</th>
+                      <th scope="col">FimOperação</th>
+                      <th scope="col">Desatracação</th>
+                      <th scope="col">Navio</th>
+                      <th scope="col">Movimentos</th>
+                      <th scope="col">Média/Hora</th>
+                      <th scope="col">Serviço</th>
+                      <th scope="col">Liner</th>
+                      <th scope="col">Berço</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let escala of impacto.ESCALAS_IMPACTADAS">
+                        <td>{{ escala.CHEGADA_BARRA | date:'dd/MM/yyyy' }}</td>
+                        <td>{{ escala.PREVISAO_ATRACACAO | date:'dd/MM/yyyy' }}</td>
+                        <td>{{ escala.ESCA_DTHR_ATRACACAO | date:'dd/MM/yyyy' }}</td>
+                        <td>{{ escala.INICIO_OPERACAO | date:'dd/MM/yyyy' }}</td>
+                        <td>{{ escala.FIM_OPERCACAO | date:'dd/MM/yyyy' }}</td>
+                        <td>{{ escala.DESATRACACAO | date:'dd/MM/yyyy' }}</td>
+                        <td>{{ escala.NAVI_NOME }}</td>
+                        <td>{{ escala.HINA_QTDE_TOTAL_MOV }}</td>
+                        <td>{{ escala.HINA_CMPH }}</td>
+                        <td>{{ escala.SERVICO }}</td>
+                        <td>{{ escala.LINER }}</td>
+                        <td>{{ escala.BERCO_ATRACACAO }}</td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <div class="col-md-12" *ngIf="impacto.OPERADORES_IMPACTADOS.length > 0">
+              <br>
+                <label><b>Operadores Impactados</b></label>
+                <div class="table-responsive">
+                  <table class="table table-condensed table-hover">
+                    <thead>
+                      <tr>
+                        <th>CEP</th>
+                        <th>Escala</th>
+                        <th>Turma</th>
+                        <th>Cargo</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let operador of impacto.OPERADORES_IMPACTADOS">
+                        <td>{{ operador.CEP }}</td>
+                        <td>{{ operador.ESCALA }}</td>
+                        <td>{{ operador.TURMA }}</td>
+                        <td>{{ operador.CARGO }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+          </div>
+          
+        </li>
+      </ul>
+    </div>
+
+
     <div class="table-responsive">
       <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
+        
+        
       </table>
     </div>
   </div>

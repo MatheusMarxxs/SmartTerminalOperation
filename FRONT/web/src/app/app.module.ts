@@ -10,7 +10,6 @@ import { NavioComponent } from './navio/navio.component';
 
 import { NavioService } from './navio.service';
 import { EventoComponent } from './evento/evento.component';
-import { EscalasComponent } from './escalas/escalas.component';
 import { ImpactosComponent } from './impactos/impactos.component';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { ImpactosComponent } from './impactos/impactos.component';
     AppComponent,
     NavioComponent,
     EventoComponent,
-    EscalasComponent,
     ImpactosComponent
   ],
   imports: [
