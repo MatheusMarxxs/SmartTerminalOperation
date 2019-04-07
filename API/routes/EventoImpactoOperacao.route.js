@@ -100,9 +100,17 @@ function AplicarImpactos(evento)
             LINER: "234",
             BERCO_ATRACACAO: "333"
         }
+    if (impacto.CAUSA_EVENTO == "Alteracao Data Atracacao")
+    {
+        EscalaImpactada.NAVI_NOME = impacto.NAVI_NOME;
+        EscalaImpactada.SERVICO = impacto.SERVICO;
+        impacto.ESCALAS_IMPACTADAS.push(EscalaImpactada);
+    }
+
     
     impacto.OPERADORES_IMPACTADOS.push(OperadorImpactado); 
-    impacto.ESCALAS_IMPACTADAS.push(EscalaImpactada);
+
+    
 
     impacto.save().then(eventoImpactoOperacao => {            
         })
