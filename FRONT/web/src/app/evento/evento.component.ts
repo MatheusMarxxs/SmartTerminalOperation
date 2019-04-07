@@ -26,15 +26,14 @@ export class EventoComponent implements OnInit {
   }
 
    addEvento(form) {
-      console.log(form.value);
-      console.log("teeste");
-      // this.es.addEvento(
-      //    DATA_OCORRENCIA_EVENTO,
-      //    TIPO_ENTRADA,
-      //    CAUSA_EVENTO, 
-      //    NOME_EVENTO, 
-      //    DESCRICAO_EVENTO
-      //   );
+      console.log("teste");
+       this.es.addEvento(
+          form.value.DATA_OCORRENCIA_EVENTO,
+          form.value.TIPO_ENTRADA,
+          form.value.CAUSA_EVENTO, 
+          form.value.NOME_EVENTO, 
+          form.value.DESCRICAO_EVENTO
+         );
     }
 
   ngOnInit() {
