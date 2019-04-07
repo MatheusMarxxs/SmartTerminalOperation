@@ -31,11 +31,14 @@ export class EventoService {
         NAVIO: NAVIO,
         VIAGEM: VIAGEM,
         CODIGO_EQUIPAMENTO: CODIGO_EQUIPAMENTO,
-        IMPACTO_TIPOEQUIPAMENTO: TIPO_EQUIPAMENTO
+        TIPO_EQUIPAMENTO: TIPO_EQUIPAMENTO
       }
 
-      this.http.post(this.url, obj)
-        .subscribe(res => console.log('Done'));
+      var retorno;
 
+      this.http.post(this.url, obj)
+        .subscribe(res => { retorno = res; });
+
+      return retorno;
   }
 }

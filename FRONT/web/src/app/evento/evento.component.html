@@ -46,7 +46,8 @@
           </div>
         
         <div class="form-group">
-          <button (click)="addEvento(angForm)" class="btn btn-primary">Adicionar</button>
+          <button (click)="addEvento(angForm)" class="btn btn-primary" *ngIf="mensagemRetorno == undefined">Adicionar</button>
+          <button class="btn btn-success" *ngIf="mensagemRetorno != undefined">{{mensagemRetorno}}</button>
         </div>
       </form>
     </div>

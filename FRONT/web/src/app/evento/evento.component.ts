@@ -31,7 +31,7 @@ export class EventoComponent implements OnInit {
 
    addEvento(form) {
       console.log("teste");
-       this.es.addEvento(
+       var retorno = this.es.addEvento(
           form.value.DATA_OCORRENCIA_EVENTO,
           form.value.TIPO_ENTRADA,
           form.value.CAUSA_EVENTO, 
@@ -43,7 +43,13 @@ export class EventoComponent implements OnInit {
           form.value.TIPO_EQUIPAMENTO
 
          );
+
+     
+          this.mensagemRetorno = 'Evento Registrado';
+
     }
+
+    mensagemRetorno: string;
 
   ngOnInit() {
   }

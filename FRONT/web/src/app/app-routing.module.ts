@@ -7,7 +7,7 @@ import { ImpactosComponent } from './impactos/impactos.component';
 
 const routes: Routes = [
   { 
-    path: 'navio',
+    path: '',
     component: NavioComponent
   },
   { 
