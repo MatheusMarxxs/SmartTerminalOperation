@@ -1,3 +1,31 @@
-<p>
-  evento works!
-</p>
+<div class="card">
+    <div class="card-body">
+      <form [formGroup]="angForm" novalidate>
+        <div class="form-group">
+          <label class="col-md-4">Nome evento</label>
+          <input type="text" class="form-control" formControlName="NOME_EVENTO" />
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Causa evento</label>
+          <input type="text" class="form-control" formControlName="CAUSA_EVENTO" />
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Descricao</label>
+          <input type="text" class="form-control" formControlName="DESCRICAO_EVENTO" />
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Tipo de entrada</label>
+          <input type="text" class="form-control" formControlName="TIPO_ENTRADA" />
+        </div>
+        <div class="form-group">
+            <label class="col-md-4">Dat ocorrencia</label>
+            <input type="text" class="form-control" formControlName="DATA_OCORRENCIA_EVENTO" />
+          </div>
+        
+        <div class="form-group">
+          <button (click)="addEvento(angForm)" class="btn btn-primary">Adicionar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
