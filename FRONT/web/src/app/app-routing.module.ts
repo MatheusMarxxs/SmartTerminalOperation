@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NavioComponent } from './navio/navio.component';
+import { EventoComponent } from './evento/evento.component';
 
 
 const routes: Routes = [
   { 
     path: 'navio',
     component: NavioComponent
+  },
+  { 
+    path: 'evento',
+    component: EventoComponent
   }
 ];
 
