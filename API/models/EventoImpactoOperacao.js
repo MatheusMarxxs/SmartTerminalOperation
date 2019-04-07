@@ -10,7 +10,7 @@ let EventoImpactoOperacao = new mongoose.Schema({
     NAVIO:String ,
     VIAGEM:String,
     TIPO_EQUIPAMENTO: String,
-    CODIGO_EQUIPAMENTO: Number
+    CODIGO_EQUIPAMENTO: String
 
     
 });

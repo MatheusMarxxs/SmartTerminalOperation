@@ -40,11 +40,41 @@ router.post("/", function(req, res) {
 
 function NotificarEvento(evento)
 {
-    var mensagem = "Devido a " + evento.CAUSA_EVENTO + " que devera ocorrer as " + evento.DATA_OCORRENCIA_EVENTO + " seu turno pode ser alterado! Fique atento!";
+    var mensagem = "" ;
+    
+    // TODO: TROCAR IFS POR FUNCOES 
+    if (evento.CAUSA_EVENTO == "QUEDA DE ENERGIA") {
+        mensagem = "Devido a " + evento.CAUSA_EVENTO
+            + " " 
+            + (Date.now <= evento.DATA_OCORRENCIA_EVENTO ? " que devera ocorrer as " : "que ocorreu as ")
+            + evento.DATA_OCORRENCIA_EVENTO
+            + " seu turno pode ser alterado! Fique atento!";
+    }
+    if (evento.CAUSA_EVENTO == "Alteracao Data Atracacao") {
+        mensagem = "Devido a " + evento.CAUSA_EVENTO
+            + " " + evento.NAVIO + " " + evento.VIAGEM + " " 
+            + (Date.now <= evento.DATA_OCORRENCIA_EVENTO ? " que devera ocorrer as " : "que ocorreu as ")
+            + evento.DATA_OCORRENCIA_EVENTO
+            + " seu turno pode ser alterado! Fique atento!";
+    }
+    if (evento.CAUSA_EVENTO == "Equipamento")
+    {
+        mensagem = "Devido a falha em " + evento.CAUSA_EVENTO 
+                    + " " + evento.TIPO_EQUIPAMENTO + " "
+                    + (Date.now <= evento.DATA_OCORRENCIA_EVENTO ? " que devera ocorrer as " : "que ocorreu as ")
+                    + evento.DATA_OCORRENCIA_EVENTO 
+                    + " seu turno pode ser alterado! Fique atento!";
+    }
+    if (mensagem == "") {
+        mensagem = "Devido a " + evento.CAUSA_EVENTO
+            + " " 
+            + (Date.now <= evento.DATA_OCORRENCIA_EVENTO ? " que devera ocorrer as " : "que ocorreu as ")
+            + evento.DATA_OCORRENCIA_EVENTO
+            + " seu turno pode ser alterado! Fique atento!";
+    }
 
     var notificacao = new Notificacao();
     notificacao.MENSAGEM_NOTIFICACAO = mensagem;
-    // request.post('http://localhost:4000/notificacao').form(notificacao);
 
     request.post('http://localhost:4000/notificacao', {
     json: {
@@ -75,6 +105,7 @@ function AplicarImpactos(evento)
     impacto.TIPO_EQUIPAMENTO = evento.TIPO_EQUIPAMENTO;
     impacto.CODIGO_EQUIPAMENTO =  evento.CODIGO_EQUIPAMENTO;
 
+    // TODO : CRIAR FUNÇÔES PARA IDENTICAR IMPACTO REAL EM OPERADORES , PREVISAO IMPACTO , ESCALAS
     impacto.DATA_INICIAL = '2019-04-06';
     impacto.DATA_FINAL_PREVISTA = '2019-04-06';
     impacto.DATA_FINAL = '2019-04-06';
@@ -100,9 +131,17 @@ function AplicarImpactos(evento)
             LINER: "234",
             BERCO_ATRACACAO: "333"
         }
+    if (impacto.CAUSA_EVENTO == "Alteracao Data Atracacao")
+    {
+        EscalaImpactada.NAVI_NOME = impacto.NAVI_NOME;
+        EscalaImpactada.SERVICO = impacto.SERVICO;
+        impacto.ESCALAS_IMPACTADAS.push(EscalaImpactada);
+    }
+
     
     impacto.OPERADORES_IMPACTADOS.push(OperadorImpactado); 
-    impacto.ESCALAS_IMPACTADAS.push(EscalaImpactada);
+
+    
 
     impacto.save().then(eventoImpactoOperacao => {            
         })
