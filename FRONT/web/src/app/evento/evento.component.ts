@@ -25,21 +25,16 @@ export class EventoComponent implements OnInit {
     });
   }
 
-   addEvento(
-      DATA_OCORRENCIA_EVENTO,
-      TIPO_ENTRADA,
-      CAUSA_EVENTO, 
-      NOME_EVENTO, 
-      DESCRICAO_EVENTO
-    ) {
+   addEvento(form) {
+      console.log(form.value);
       console.log("teeste");
-      this.es.addEvento(
-         DATA_OCORRENCIA_EVENTO,
-         TIPO_ENTRADA,
-         CAUSA_EVENTO, 
-         NOME_EVENTO, 
-         DESCRICAO_EVENTO
-        );
+      // this.es.addEvento(
+      //    DATA_OCORRENCIA_EVENTO,
+      //    TIPO_ENTRADA,
+      //    CAUSA_EVENTO, 
+      //    NOME_EVENTO, 
+      //    DESCRICAO_EVENTO
+      //   );
     }
 
   ngOnInit() {
