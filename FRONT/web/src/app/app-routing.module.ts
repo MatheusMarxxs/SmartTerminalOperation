@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NavioComponent } from './navio/navio.component';
 import { EscalasComponent } from './escalas/escalas.component';
 import { EventoComponent } from './evento/evento.component';
+import { ImpactosComponent } from './impactos/impactos.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   { 
     path: 'evento',
     component: EventoComponent
+  },
+  {
+    path: 'impacto',
+    component: ImpactosComponent
   }
 ];
 

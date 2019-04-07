@@ -11,13 +11,15 @@ import { NavioComponent } from './navio/navio.component';
 import { NavioService } from './navio.service';
 import { EventoComponent } from './evento/evento.component';
 import { EscalasComponent } from './escalas/escalas.component';
+import { ImpactosComponent } from './impactos/impactos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavioComponent,
     EventoComponent,
-    EscalasComponent
+    EscalasComponent,
+    ImpactosComponent
   ],
   imports: [
     BrowserModule,
