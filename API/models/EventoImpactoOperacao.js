@@ -6,8 +6,11 @@ let EventoImpactoOperacao = new mongoose.Schema({
     TIPO_ENTRADA: String, // MANUAL | AUTO
     CAUSA_EVENTO: String,  // QUEDA DE ENERGIA| ALTERAÇÃO DE ETA | MARÉ BAIXA| QUEBRA DE EQUIPAMENTO 
     DESCRICAO_EVENTO: String,
+    NOME_EVENTO: String,
     NAVIO:String ,
-    VIAGEM:String
+    VIAGEM:String,
+    TIPO_EQUIPAMENTO: String,
+    CODIGO_EQUIPAMENTO: Number
 
     
 });
