@@ -14,6 +14,16 @@ router.get("/", function(req, res) {
     })
 });
 
+router.get("/impacto", function (req, res) {
+    ImpactoOperacao.find(function (err, impactoeventos) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.json(impactoeventos);
+        }
+    })
+});
+
 router.post("/", function(req, res) {
     let eventoImpactoOperacao = new EventoImpactoOperacao(req.body);
 
