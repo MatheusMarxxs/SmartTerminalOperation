@@ -28,7 +28,7 @@ export class EventoService {
 
       console.log(obj);
 
-      this.http.post('${this.url}', obj)
+      this.http.post(this.url, obj)
         .subscribe(res => console.log('Done'));
   }
 }
