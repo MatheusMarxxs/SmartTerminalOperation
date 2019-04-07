@@ -10,12 +10,14 @@ import { NavioComponent } from './navio/navio.component';
 
 import { NavioService } from './navio.service';
 import { EventoComponent } from './evento/evento.component';
+import { EscalasComponent } from './escalas/escalas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavioComponent,
-    EventoComponent
+    EventoComponent,
+    EscalasComponent
   ],
   imports: [
     BrowserModule,
