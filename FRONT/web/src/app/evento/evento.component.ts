@@ -21,7 +21,11 @@ export class EventoComponent implements OnInit {
       TIPO_ENTRADA: ['', Validators.required ],
       CAUSA_EVENTO: ['', Validators.required ],
       NOME_EVENTO: ['', Validators.required ],
-      DESCRICAO_EVENTO: ['', Validators.required ]
+      DESCRICAO_EVENTO: ['', Validators.required ],
+      NAVIO: [''],
+      VIAGEM: [''],
+      CODIGO_EQUIPAMENTO: [''],
+      TIPO_EQUIPAMENTO: ['']
     });
   }
 
@@ -32,7 +36,12 @@ export class EventoComponent implements OnInit {
           form.value.TIPO_ENTRADA,
           form.value.CAUSA_EVENTO, 
           form.value.NOME_EVENTO, 
-          form.value.DESCRICAO_EVENTO
+          form.value.DESCRICAO_EVENTO,
+          form.value.NAVIO,
+          form.value.VIAGEM,
+          form.value.CODIGO_EQUIPAMENTO,
+          form.value.TIPO_EQUIPAMENTO
+
          );
     }
 

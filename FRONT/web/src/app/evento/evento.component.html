@@ -7,15 +7,38 @@
         </div>
         <div class="form-group">
           <label class="col-md-4">Causa evento</label>
-          <input type="text" class="form-control" formControlName="CAUSA_EVENTO" />
+          <select class="form-control" formControlName="CAUSA_EVENTO" >
+            <option value="AlteracaoETA">Alteracao Data Atracacao</option>
+            <option value="QuedaEnergia">Queda Energia</option>
+            <option value="MareBaixa">Mare baixa</option>
+            <option value="Equipamento">Equipamento</option>
+          </select>
         </div>
+        <!--ALTERACAO ETA-->
+        <div class="form-group" *ngIf="angForm.value.CAUSA_EVENTO == 'AlteracaoETA'">
+            <label class="col-md-4">Navio</label>
+            <input type="text" class="form-control" formControlName="NAVIO" />
+          </div>
+          <div class="form-group" *ngIf="angForm.value.CAUSA_EVENTO == 'AlteracaoETA'">
+              <label class="col-md-4">Viagem</label>
+              <input type="text" class="form-control" formControlName="VIAGEM" />
+          </div>
+          <!--ALTERACAO Equipamento-->
+          <div class="form-group" *ngIf="angForm.value.CAUSA_EVENTO == 'Equipamento'">
+              <label class="col-md-4">Codigo Equipamento</label>
+              <input type="text" class="form-control" formControlName="CODIGO_EQUIPAMENTO" />
+            </div>
+            <div class="form-group" *ngIf="angForm.value.CAUSA_EVENTO == 'Equipamento'">
+                <label class="col-md-4">Tipo</label>
+                <input type="text" class="form-control" formControlName="TIPO_EQUIPAMENTO" />
+            </div>
         <div class="form-group">
           <label class="col-md-4">Descricao</label>
           <input type="text" class="form-control" formControlName="DESCRICAO_EVENTO" />
         </div>
         <div class="form-group">
           <label class="col-md-4">Tipo de entrada</label>
-          <input type="text" class="form-control" formControlName="TIPO_ENTRADA" />
+          <input type="text" class="form-control" formControlName="TIPO_ENTRADA" placeholder="MANUAL"  />
         </div>
         <div class="form-group">
             <label class="col-md-4">Dat ocorrencia</label>

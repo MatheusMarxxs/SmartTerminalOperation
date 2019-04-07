@@ -7,7 +7,7 @@ import { HttpClient} from '@angular/common/http';
 export class EventoService {
 
   url = 'http://localhost:4000/evento';
-
+  
   constructor(private http: HttpClient) { }
 
   addEvento(
@@ -15,7 +15,11 @@ export class EventoService {
     TIPO_ENTRADA, // MANUAL | AUTO
     CAUSA_EVENTO,  // NATUREZA | FALHA EQUIPAMENTO
     NOME_EVENTO,
-    DESCRICAO_EVENTO
+    DESCRICAO_EVENTO,
+    NAVIO,
+    VIAGEM,
+    CODIGO_EQUIPAMENTO,
+    TIPO_EQUIPAMENTO
     ) {
     
       const obj = {
@@ -23,12 +27,15 @@ export class EventoService {
         TIPO_ENTRADA: TIPO_ENTRADA, 
         CAUSA_EVENTO: CAUSA_EVENTO,
         NOME_EVENTO: NOME_EVENTO,
-        DESCRICAO_EVENTO: DESCRICAO_EVENTO
+        DESCRICAO_EVENTO: DESCRICAO_EVENTO,
+        NAVIO: NAVIO,
+        VIAGEM: VIAGEM,
+        CODIGO_EQUIPAMENTO: CODIGO_EQUIPAMENTO,
+        IMPACTO_TIPOEQUIPAMENTO: TIPO_EQUIPAMENTO
       }
-
-      console.log(obj);
 
       this.http.post(this.url, obj)
         .subscribe(res => console.log('Done'));
+
   }
 }

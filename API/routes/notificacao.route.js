@@ -22,9 +22,13 @@ router.get("/", function(req, res) {
 });
 
 router.post("/", function(req, res) {
-    let notificacao = new Notificacao(req.body);
-
-    notificacao.save().then(nofificacao => {
+    let notificacao = new Notificacao(req.body.notificacao);
+    console.log("a");
+    console.log(notificacao);
+    console.log("b");
+    console.log(req.body);
+    
+    notificacao.save().then(notificacaoBanana => { 1
 
         
         var jsonPayload = JSON.stringify({
