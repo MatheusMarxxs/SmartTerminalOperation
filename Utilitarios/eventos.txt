@@ -1,0 +1,49 @@
+- EVENTO:
+    - nomeEvento
+    - causaEvento -- COMBO HARDCODE
+    - dtOcorrencia
+    - tipoEntrada
+    - IMPACTO
+
+- IMPACTO:
+    - dtInicial
+    - dtFinalPrevista
+    - dtFinal
+
+
+
+- ESCALA:
+
+
+
+    - QUEDA DE ENERGIA
+
+    - ALTERAÇÃO DE ETA
+
+    - MARÉ BAIXA
+
+    - QUEBRA DE EQUIPAMENTO
+        - causaEvento
+        - dtOcorrencia
+        - tipoEntrada
+        - IMPACTO:
+            - dtInicial
+            - dtFinalPrevista
+            - dtFinal
+
+
+
+DATA_OCORRENCIA_EVENTO: Date,
+DATA_CRIACAO_EVENTO: Date,
+
+DESCRICAO_EVENTO: String
+
+IMPACTO
+- dtInicio
+- dtFim
+
+
+
+
+
+NOTIFICAÇÕES VÃO PARA NOSSO GRUPO.
