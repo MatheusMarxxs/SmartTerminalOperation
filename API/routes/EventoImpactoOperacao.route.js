@@ -29,7 +29,10 @@ router.post("/", function(req, res) {
     let eventoImpactoOperacao = new EventoImpactoOperacao(req.body);
 
     eventoImpactoOperacao.save().then(eventoImpactoOperacao => {
+        // aplicar / analisar Impacto do Evento 
         AplicarImpactos(eventoImpactoOperacao);
+        
+        // TODO: Trocar Evento pelo Impacto / Evento Enriquecido com os Impactos
         NotificarEvento(eventoImpactoOperacao);
         res.status(200).json({ 'eventoImpactoOperacao': 'eventoImpactoOperacao adicionado com sucesso'})
     })
@@ -40,11 +43,41 @@ router.post("/", function(req, res) {
 
 function NotificarEvento(evento)
 {
-    var mensagem = "Devido a " + evento.CAUSA_EVENTO + " que devera ocorrer as " + evento.DATA_OCORRENCIA_EVENTO + " seu turno pode ser alterado! Fique atento!";
+    var mensagem = "" ;
+    
+    // TODO: TROCAR IFS POR FUNCOES 
+    if (evento.CAUSA_EVENTO == "QUEDA DE ENERGIA") {
+        mensagem = "Devido a " + evento.CAUSA_EVENTO
+            + " " 
+            + (Date.now <= evento.DATA_OCORRENCIA_EVENTO ? " que devera ocorrer as " : "que ocorreu as ")
+            + evento.DATA_OCORRENCIA_EVENTO
+            + " seu turno pode ser alterado! Fique atento!";
+    }
+    if (evento.CAUSA_EVENTO == "Alteracao Data Atracacao") {
+        mensagem = "Devido a " + evento.CAUSA_EVENTO
+            + " " + evento.NAVIO + " " + evento.VIAGEM + " " 
+            + (Date.now <= evento.DATA_OCORRENCIA_EVENTO ? " que devera ocorrer as " : "que ocorreu as ")
+            + evento.DATA_OCORRENCIA_EVENTO
+            + " seu turno pode ser alterado! Fique atento!";
+    }
+    if (evento.CAUSA_EVENTO == "Equipamento")
+    {
+        mensagem = "Devido a falha em " + evento.CAUSA_EVENTO 
+                    + " " + evento.TIPO_EQUIPAMENTO + " "
+                    + (Date.now <= evento.DATA_OCORRENCIA_EVENTO ? " que devera ocorrer as " : "que ocorreu as ")
+                    + evento.DATA_OCORRENCIA_EVENTO 
+                    + " seu turno pode ser alterado! Fique atento!";
+    }
+    if (mensagem == "") {
+        mensagem = "Devido a " + evento.CAUSA_EVENTO
+            + " " 
+            + (Date.now <= evento.DATA_OCORRENCIA_EVENTO ? " que devera ocorrer as " : "que ocorreu as ")
+            + evento.DATA_OCORRENCIA_EVENTO
+            + " seu turno pode ser alterado! Fique atento!";
+    }
 
     var notificacao = new Notificacao();
     notificacao.MENSAGEM_NOTIFICACAO = mensagem;
-    // request.post('http://localhost:4000/notificacao').form(notificacao);
 
     request.post('http://localhost:4000/notificacao', {
     json: {
