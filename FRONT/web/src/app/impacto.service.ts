@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ImpactoService {
 
-  url = 'http://localhost:4000/evento/impacto';
+  url = 'https://smart-terminal-api.herokuapp.com/evento/impacto';
 
   constructor(private http: HttpClient) { }
 

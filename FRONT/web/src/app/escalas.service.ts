@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class EscalasService {
-  url = 'http://localhost:4000/escala';
+  url = 'https://smart-terminal-api.herokuapp.com/escala';
 
   constructor(private http: HttpClient) { }
 

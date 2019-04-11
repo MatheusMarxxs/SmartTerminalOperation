@@ -7,7 +7,7 @@ import { HttpClient} from '@angular/common/http';
 })
 export class NavioService {
 
-  url = 'http://localhost:4000/navio';
+  url = 'https://smart-terminal-api.herokuapp.com/navio';
 
   constructor(private http: HttpClient) { }
 
