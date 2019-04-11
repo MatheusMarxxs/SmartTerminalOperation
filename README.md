@@ -1,5 +1,5 @@
 # SmartTerminalOperation
-
+## Hackathon dos Portos - 6 e 7 de Abril de 2019.
 Inteligência Aplicada a Operação Portuária.
 
 Através da coleta de dados refente a eventos que podem influenciar na operação de um navio e a análise dos mesmos, o impacto na operação portuária é calculado e os operadores são notificados através do WhatsApp sobre possíveis atrasos.

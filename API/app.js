@@ -52,7 +52,7 @@ app.use("/escala", routesEscala);
 mongoose.connect("mongodb+srv://dev:development123@devraizcluster0-xehvf.gcp.mongodb.net/test?retryWrites=true", { useNewUrlParser: true });
 
 // Run
-app.listen(4000, "localhost", function() {
+app.listen(process.env.PORT, process.env.IP, function() {
   console.log("Aplicação rodando - devRaiz.squad");
   console.log(process.env.PORT+ "-" +process.env.IP);
 });
